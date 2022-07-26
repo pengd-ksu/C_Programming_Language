@@ -1,40 +1,58 @@
-# include <stdio.h>
-# define MAXLINE 1000                               /* maximum input line length */
-int getline (char line[], int max);
-int strrindex(char source[], char searchfor[]);
-char pattern[] = "ould";                            /* pattern to search for */
-/* find all lines matching pattern */
-main(){
-    char line[MAXLINE];
-    int found = 0, position;
-    while (getline(line, MAXLINE) > 0){
-        if ((position = strrindex (line, pattern)) >= 0){
-            printf("%s\n", line);
-            printf("Postion: %d\n", position);
-            found++;
-        }
+#include <ctype.h>
+#include <stdio.h>
+#define BUFSIZE 100
+
+int getch(void);
+void ungetch(int);
+
+/* getint: get next integer from input into *pn */
+int getint(int *pn) {
+    int c, sign;
+    /* skip white space */
+    while (isspace(c = getch())) {
+        ;
     }
-    return found;
-}
-/* getline: get line int s, return length */
-int getline(char s[], int lim){
-    int c, i;
-    i = 0;
-    while (--lim > 0 && (c = getchar()) != EOF && c != '\n')
-        s[i++] = c;
-    if(c == '\n')
-        s[i++] = c;
-    s[i] = '\0';
-    return i;
-}
-/* strrindex: returns the position of the rightmost occurrence of t in s, or −1 if there is none */
-int strrindex(char s[], char t[]){
-    int rindex = -1, i, j, k;
-    for(i = 0; s[i] != '\0'; i++){
-        for(j = i, k = 0; t[k] != '\0' && s[j] == t[k]; j++, k++)
-            ;
-        if(k > 0 && t[k] == '\0')
-            rindex = i;
+    if (!isdigit(c) && c != EOF && c != '+' && c != '-') {
+        ungetch(c);
+        return 0;
     }
-    return rindex;
+    sign = (c == '-') ? -1 : 1;
+    if (c == '+' || c == '-') {
+        c =getch();
+    }
+    for (*pn = 0; isdigit(c); c = getch()) {
+        *pn = 10 * (*pn) + (c - '0');
+    }
+    *pn *= sign;
+    if (c != EOF) {
+        ungetch(c);
+    }
+    return c;
+}
+
+char buf[BUFSIZE];      /* buffer for ungetch */
+int bufp = 0;           /* next free position in buf */
+
+/* get a (possibly pushed back) character */
+int getch(void) {
+    return (bufp > 0) ? buf[--bufp] : getchar();
+}
+
+/* push character back on input */
+void ungetch(int c) {
+    if (bufp >= BUFSIZE) {
+        printf("ungetch: too many characters\n");
+    } else {
+        buf[bufp++] = c;
+    }
+}
+
+int main() {
+    int n;
+    getint(&n);
+    if (n == 0) {
+        printf("Input number is invalid.\n");
+    } else {
+        printf ("The intput number is: %d\n", n);
+    }
 }
