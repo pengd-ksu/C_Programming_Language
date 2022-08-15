@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /* strlen: return length of string s */
-int myStrlen(char *s) {
+size_t myStrlen_v1(char *s) {
     int n;
     for (n = 0; *s != '\0'; s++) {
         n++;
@@ -11,7 +11,7 @@ int myStrlen(char *s) {
 }
 
 int main() {
-    int n;
-    n = myStrlen("hello, world");
-    printf("The length of 'hello, world' is : %d\n", n);
+    size_t n;
+    n = myStrlen_v1("hello, world");
+    printf("The length of 'hello, world' is : %zu\n", n);
 }
