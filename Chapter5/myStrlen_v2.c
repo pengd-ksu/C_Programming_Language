@@ -1,4 +1,3 @@
-//#include <ctype.h>
 #include <stdio.h>
 
 /* strlen: return length of string s */
