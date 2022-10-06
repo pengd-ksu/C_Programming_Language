@@ -48,11 +48,11 @@ void ungetch(int c) {
 }
 
 int main() {
-    int n;
-    getint(&n);
-    if (n == 0) {
-        printf("Input number is invalid.\n");
-    } else {
-        printf ("The intput number is: %d\n", n);
+    int n[10];
+    getint(&n[0]);
+    int idx = 0;
+    while(n[idx] != '\0') {
+        printf("%d\n", n[idx]);
+        idx++;
     }
 }
