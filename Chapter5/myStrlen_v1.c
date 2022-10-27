@@ -12,6 +12,7 @@ size_t myStrlen_v1(char *s) {
 
 int main() {
     size_t n;
-    n = myStrlen_v1("hello, world");
-    printf("The length of 'hello, world' is : %zu\n", n);
+    char c[] = "Martian.";
+    n = myStrlen_v1(c);
+    printf("The length of %s is : %zu\n", c, n);
 }
