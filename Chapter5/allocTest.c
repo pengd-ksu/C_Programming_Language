@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<string.h>
 #include "alloc.h"
-
+/* Set ALLOCSIZE in alloc.c to 10 to make this test convenient */
 int main() {
     int l1 = 3, l2 = 8, l3 = 4;
 
