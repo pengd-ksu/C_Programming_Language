@@ -22,9 +22,9 @@ int getint(int *pn) {
         if (!isdigit(c = getch())) {
             if (c != EOF) {
                 ungetch(c);
-                ungetch(getSign);
-                return getSign;
             }
+            ungetch(getSign);
+            return getSign;
         }
     }
     for (*pn = 0; isdigit(c); c = getch()) {
