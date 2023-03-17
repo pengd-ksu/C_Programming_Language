@@ -5,10 +5,6 @@ an end-of-file, use CTRL-D (unix-style systems) or CTRL-Z (Windows).*/
 
 int main(){
 
-    int c;
-
-    while((c = getchar()) != EOF)
-        putchar(c);
-    printf("%d - at EOF\n",c);
+    printf("Integer value of EOF: %d\n",EOF);
 
 }
