@@ -1,13 +1,11 @@
 #include <stdio.h>
 
-int power(int m, int n);
+int power(int, int);
 
 /* test power function */
-
 int main()
 {
     int i;
-
     for (i = 0; i < 10; ++i)
         printf("%7d %7d %7d\n", i, power(2, i), power(-3, i));
     return 0;

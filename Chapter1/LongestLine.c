@@ -18,8 +18,9 @@ int main()
             max = len;
             copy(longest, line);
         }
-    if (max > 0)            /* there was a line */
+    if (max > 0) {
         printf("%s", longest);
+    }
     return 0;
 }
 

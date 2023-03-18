@@ -22,7 +22,7 @@ int main(){
     for(i = 0; i < MAXWORD; ++i){
         wl[i] = 0;
     }
-    while((c = getchar()) != EOF){
+    while((c = getchar()) != EOF) {
         if(c == ' '||c == '\n'||c=='\t'){
             state = OUT;
             if(nc > 0){                /* to make sure whether it's just outside, or there was consecutive blank */
@@ -33,7 +33,7 @@ int main(){
             }
             nc = 0;                    /* after the initial blank, make the rest blank wouldn't be counted as words */
         }
-        else if (state == OUT){        /* encountering the first character of a word */
+        else if (state == OUT) {        /* encountering the first character of a word */
             state = IN;
             nc = 1;
         }
@@ -48,11 +48,12 @@ int main(){
     for(i = 1; i < MAXWORD; ++i){
         printf("%5d - %5d :",i, wl[i]);
         if(wl[i] > 0){
-            if((len = wl[i]*MAXHIST / maxvalue) <= 0)   /* wl[i]/maxvalue should be between 0 and 1, excluding 0 while including 1 */
+            if((len = wl[i] * MAXHIST / maxvalue) <= 0) {  /* wl[i]/maxvalue should be between 0 and 1, excluding 0 while including 1 */
                 len = 1;                                /* the variable len scales the value in wl[i] according to MAXHIST and maxvalue */
-        }
-        else
+            }
+        } else {
             len = 0;
+        }
         while (len > 0){
             putchar('*');
             --len;

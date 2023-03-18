@@ -43,19 +43,23 @@ int main(){
     }
     for(i = MAXHIST; i > 0; --i){
         for(j = 1; j < MAXWORD; ++j){
-            if(wl[j]*MAXHIST / maxvalue >= i)   /* wl[j]/maxvalue >= i/MAXHIST, with i decreasing.*/
+            if(wl[j]*MAXHIST / maxvalue >= i) {  /* wl[j]/maxvalue >= i/MAXHIST, with i decreasing.*/
                 printf(" * ");                  /*Make sure only to print when i decreased to corresponding scale. */
-            else
+            } else {
                 printf("   ");
+            }
         }
         putchar('\n');
     }
-    for(i = 1; i < MAXWORD; ++i)
+    for(i = 1; i < MAXWORD; ++i) {
         printf("%2d ", i);
+    }
     putchar('\n');
-    for(i = 1; i < MAXWORD; ++i)
+    for(i = 1; i < MAXWORD; ++i) {
         printf("%2d ", wl[i]);
+    }
     putchar('\n');
-    if(overflow > 0)
+    if(overflow > 0) {
         printf("There are %d words >= %d\n", overflow, MAXWORD);
+    }
 }

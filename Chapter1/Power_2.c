@@ -3,7 +3,6 @@
 int power(int m, int n);
 
 /* test power function */
-
 int main()
 {
     int i;

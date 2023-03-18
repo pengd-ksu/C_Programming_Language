@@ -1,6 +1,6 @@
 # include <stdio.h>
 # define TABINC 8
-main(){
+main() {
     int c, nb, pos;
     pos = 0;
     nb = 0;

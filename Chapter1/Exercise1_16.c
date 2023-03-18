@@ -10,7 +10,8 @@ int main(){
 
     max = 0;
     while((len = mygetline(line, MAXLINE)) > 0){
-        printf("Length: %d, input: %s\n", len, line);
+        // mygetline will attach a new line to the end of the string.
+        printf("Length: %d, input: %s", len, line);
     }
     return 0;
 }

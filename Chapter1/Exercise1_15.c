@@ -5,19 +5,19 @@
 #define STEP    20      /* step size*/
 
 /* print Fahrenheit-Celsius table */
-float celsius(float fahr);
+float fahrToCelsius(float);
 
 int main()
 {
     float fahr;
 
-    for (fahr = LOWER; fahr <= UPPER; fahr = fahr + STEP)
-        printf("%3.0f   %6.1f\n", fahr, celsius(fahr));
+    for (fahr = LOWER; fahr <= UPPER; fahr = fahr + STEP) {
+        printf("%3.0f   %6.1f\n", fahr, fahrToCelsius(fahr));
+    }
     return 0;
 }
 
-float celsius(float fahr)
-{
+float fahrToCelsius(float fahr) {
     float celsius;
     celsius = (5.0 / 9.0) * (fahr - 32.0);
     return celsius;
