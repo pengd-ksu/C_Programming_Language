@@ -4,12 +4,11 @@ int main(){
     int c, lastc;
     lastc = EOF;
     while ((c = getchar()) != EOF) {
-        if (c == ' ') {
-            if (lastc != ' ')
-                putchar(c);
-        }
-        else
+        if (c != ' ') {
             putchar(c);
+        } else if (lastc != ' ') {
+            putchar(c);
+        }
         lastc = c;
     }
 }

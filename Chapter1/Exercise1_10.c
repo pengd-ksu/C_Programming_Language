@@ -4,7 +4,6 @@
 int main() 
 {
     int c;
-    printf("\b");
     while ((c = getchar()) != EOF) {
         if (c == '\t')
             printf("\\t");

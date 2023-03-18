@@ -18,5 +18,4 @@ int main()
             ++nb;
     }
     printf("new lines: %d, new  tabs: %d, new blanks: %d\n", nl, nt, nb);
-
 }
