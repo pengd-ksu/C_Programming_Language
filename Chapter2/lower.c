@@ -1,12 +1,12 @@
 # include <stdio.h>
 /* lower: convert c to lower case; ASCII only */
 int lower(int c);
-main(){
+int main() {
     int c;
     while((c = getchar()) != EOF){
         if(c != '\n'){
             char letter = lower(c);
-            printf("The corresponding letter is %c\n", letter);
+            printf("%c to lower case: %c\n", c, letter);
         }
     }
 }
