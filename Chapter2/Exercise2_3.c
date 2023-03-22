@@ -9,7 +9,8 @@ int main () {
 }
 
 int myhtoi(char s[]) {
-    if (s[0] != '0' || s[1] != 'x') {
+    // We accept "0x" or "0X"
+    if (s[0] != '0' || ((s[1] != 'x') && (s[1] != 'X'))) {
         return -1;
     }
     int n = 0;
