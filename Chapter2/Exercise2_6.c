@@ -1,4 +1,6 @@
 # include <stdio.h>
+// Right adjusted eg: postion 4(p), 3(n) digits, like (4, 3, 2), 1, 0; the nums
+// in parentheses are what we want to reserve.
 unsigned setbits(unsigned x, int p, int n, unsigned y);
 int main() {
     unsigned x = 27;                            /* binary: 11011 */

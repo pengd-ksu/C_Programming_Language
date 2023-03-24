@@ -1,8 +1,10 @@
 # include <stdio.h>
 int bitcount(unsigned x);
-main(){
-    unsigned x = 121;                   /* bianry 1111001*/
+int main() {
+    // bianry 1111001
+    unsigned x = 121;
     printf("The 1 bits in %u is %d\n", x, (bitcount(x)));
+    return 0;
 }
 /* bitcount: count 1 bits in x */
 int bitcount(unsigned x){
