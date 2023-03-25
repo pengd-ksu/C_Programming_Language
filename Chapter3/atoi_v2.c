@@ -2,6 +2,7 @@
 # include <ctype.h>
 /* atoi: convert s to integer; version 2 */
 int myatoi(char s[]);
+
 int main() {
     char str[] = "  -25a";
     int n = myatoi(str);
