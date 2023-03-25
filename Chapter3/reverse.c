@@ -1,14 +1,14 @@
 # include <stdio.h>
 /* reverse: reverse string s in place */
 void reverse(char s[]);
-main(){
+
+int main() {
     int i = 0;
     char str[7] = "abcdefg";
+    printf("Original string: %s\n", str);
     reverse(str);
-    while(str[i] != '\0'){
-        printf("%c\n", str[i]);
-        ++i;
-    }
+    printf("Reversed to string: %s\n", str);
+    return 0;
 }
 /* reverse: reverse string s in place */
 void reverse (char s[]){
