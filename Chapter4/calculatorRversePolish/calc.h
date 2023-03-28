@@ -1,4 +1,5 @@
 #include<stdio.h>
+// for atof()
 #include <stdlib.h>
 #include <ctype.h>
 
