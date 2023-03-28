@@ -1,5 +1,8 @@
 #include "calc.h"
 
+int getch(void);
+void ungetch(int);
+
 // getop: get next operator or numeric operand
 int getop(char s[]) {
     int i, c;
@@ -9,7 +12,7 @@ int getop(char s[]) {
     s[1] = '\0';
     // support fractions like [.71828], but not negative numbers
     if (!isdigit(c) && c != '.') {
-        // not a number, might be operator
+        // not a number,
         return c;
     }
     i = 0;
