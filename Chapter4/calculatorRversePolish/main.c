@@ -3,10 +3,6 @@
 // max size of operand or operator
 #define MAXOP 100
 
-int getop(char []);
-void push(double);
-double pop(void);
-
 // reverse Polish calculator
 int main() {
     int type;
