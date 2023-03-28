@@ -4,6 +4,8 @@
 // for atof()
 #include <stdlib.h>
 #include <ctype.h>
+// for fmod
+#include <math.h>
 
 // signal that a number was found
 #define NUMBER '0'
