@@ -1,6 +1,5 @@
 #include "header.h"
 
-// reverse Polish calculator
 int main() {
     int c;
     char s[MAXSIZE] = "Remove this string.";
