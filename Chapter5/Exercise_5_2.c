@@ -5,7 +5,8 @@
 int getch(void);
 void ungetch(int);
 
-/* getint: get next integer from input into *pn */
+// The return type is still int, since the result is ASCII value after
+// the float number. The float number is shared by *pn
 int getfloat(float *pn) {
     int c, sign, getSign;
     float power;
