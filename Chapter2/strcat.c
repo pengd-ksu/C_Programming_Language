@@ -3,7 +3,7 @@ void mystrcat(char s[], char t[]);
 int main() {
     char s[] = "Hello ";
     char t[] = "world";
-    printf("s: %s, t: %s\n", s, t);
+    printf("s: [%s], t: [%s]\n", s, t);
     mystrcat(s, t);
     printf("After strcat, s became: %s\n", s);
 }
