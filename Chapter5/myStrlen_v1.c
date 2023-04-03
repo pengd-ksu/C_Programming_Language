@@ -14,5 +14,5 @@ int main() {
     size_t n;
     char c[] = "Martian.";
     n = myStrlen_v1(c);
-    printf("The length of %s is : %zu\n", c, n);
+    printf("The length of [%s] is : [%zu]\n", c, n);
 }
