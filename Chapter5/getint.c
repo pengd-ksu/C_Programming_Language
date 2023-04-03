@@ -1,6 +1,8 @@
 #include <ctype.h>
 #include <stdio.h>
+#include <limits.h>
 #define BUFSIZE 100
+#define MAXSIZE 100
 
 int getch(void);
 void ungetch(int);
@@ -20,6 +22,8 @@ int getint(int *pn) {
     if (c == '+' || c == '-') {
         c =getch();
     }
+    // In the for loop, is c is not a digit, *pn will still 
+    // be initialized as 0, this is a bug.
     for (*pn = 0; isdigit(c); c = getch()) {
         *pn = 10 * (*pn) + (c - '0');
     }
@@ -47,11 +51,17 @@ void ungetch(int c) {
     }
 }
 
+// Try typing '-' or '+' with a non-digit subsequence, will be
+// as zero.
 int main() {
-    int n[10];
-    getint(&n[0]);
+    int n[MAXSIZE];
+    for (int i = 0; i < MAXSIZE; i++) {
+        n[i] = INT_MIN;
+    }
     int idx = 0;
-    while(n[idx] != '\0') {
+    getint(&n[0]);
+    // INT_MIN is used as sentinel to detect end of array.
+    while(n[idx] != INT_MIN) {
         printf("%d\n", n[idx]);
         idx++;
     }

@@ -1,6 +1,8 @@
 #include <ctype.h>
 #include <stdio.h>
+#include <limits.h>
 #define BUFSIZE 100
+#define MAXSIZE 100
 
 int getch(void);
 void ungetch(int);
@@ -55,11 +57,15 @@ void ungetch(int c) {
 }
 
 int main() {
-    int n = -10000000;
-    getint(&n);
-    if (n == -10000000) {
-        printf("Input number is invalid.\n");
-    } else {
-        printf ("The intput number is: %d\n", n);
+    int n[MAXSIZE];
+    for (int i = 0; i < MAXSIZE; i++) {
+        n[i] = INT_MIN;
+    }
+    int idx = 0;
+    getint(&n[0]);
+    // INT_MIN is used as sentinel to detect end of array.
+    while(n[idx] != INT_MIN) {
+        printf("Input number is [%d]\n", n[idx]);
+        idx++;
     }
 }
