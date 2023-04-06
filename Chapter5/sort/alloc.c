@@ -1,13 +1,12 @@
 #include "sortHeader.h"
 
-// storage for alloc
-static char allocbuf[MAXLEN];
-// next free position
-static char *allocp = allocbuf;
+#define ALLOCSIZE 10000     /* size of available space */
+static char allocbuf[ALLOCSIZE];        /* storage for alloc */
+static char *allocp = allocbuf;         /* next free position */
 
 // return pointer to n characters
 char *alloc(int n) {
-    if (allocbuf + MAXLEN - allocp >= n) {   /* it fits */
+    if (allocbuf + ALLOCSIZE - allocp >= n) {   /* it fits */
         allocp += n;
         return allocp - n;                       /* old p */
     } else                                      /* not enough room */
@@ -16,6 +15,6 @@ char *alloc(int n) {
 
 // free storage pointed to by p
 void afree(char *p) {
-    if (p >= allocbuf && p < allocbuf + MAXLEN)
+    if (p >= allocbuf && p < allocbuf + ALLOCSIZE)
         allocp = p;
 }
