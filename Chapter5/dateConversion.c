@@ -15,7 +15,7 @@ int day_of_year(int year, int month, int day) {
 }
 /* month_day: set month, day from day of year */
 void month_day(int year, int yearday, 
-int *pmonth, int *pday) {
+                int *pmonth, int *pday) {
     int i, leap;
     leap = (year%4 == 0 && year%100 != 0 )|| (year%400 == 0);
     for (i = 1; yearday > daytab[leap][i]; i++) {
@@ -26,7 +26,13 @@ int *pmonth, int *pday) {
 }
 
 int main() {
-    int year = 2008, month = 12, day = 3;
+    int year_1 = 2008, month = 12, day = 3;
+    int year_2 = 2023, yearday = 34;
+    int pmonth, pday;
     printf("The day of year for year %d, month %d, and day %d is:" 
-    "%d\n", year, month, day, day_of_year(year, month, day));
+    "%d\n", year_1, month, day, day_of_year(year_1, month, day));
+
+    month_day(year_2, yearday, &pmonth, &pday);
+    printf("%d days of the year %d is month %d , day %d\n", yearday, \
+            year_2, pmonth, pday);
 }
