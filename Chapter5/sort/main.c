@@ -7,8 +7,8 @@ char *lineptr[MAXLINES];
 int main() {
     // number of input lines read
     int nlines;
-    char line[MAXLEN];
-    if ((nlines = readlines(lineptr, MAXLINES, line)) >= 0) {
+
+    if ((nlines = readlines(lineptr, MAXLINES)) >= 0) {
         myQsort(lineptr, 0, nlines - 1);
         writelines(lineptr, nlines);
         return 0;

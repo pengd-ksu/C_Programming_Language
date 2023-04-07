@@ -8,7 +8,7 @@
 
 void myStrcpy(char *, char *);
 int myGetline(char [], int);
-int readlines(char *[], int);
+int readlines(char *[], int, char []);
 void writelines(char *[], int);
 void myQsort(char *[], int, int);
 void swap(char *[], int i, int j);
