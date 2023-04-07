@@ -1,0 +1,1 @@
+gcc -I./ -o calculator getch.c getop.c main.c
