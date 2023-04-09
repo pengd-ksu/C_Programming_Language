@@ -81,7 +81,9 @@ int getword(char *word, int lim) {
     for (; --lim > 0; w++) {
         // Will read next char to w even if next char
         // isn't alpha nor number, since it's executed
-        // by (*w = getch()) as condition.
+        // by (*w = getch()) as condition. That's the 
+        // reason we need ungetch to get the char that's
+        // not alpha nor number back to buffer.
         if(!isalnum(*w = getch())) {
             ungetch(*w);
             break;
