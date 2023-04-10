@@ -12,7 +12,6 @@ struct point addpoint(struct point p1, struct point p2) {
     return p1;
 }
 
-
 int main() {
     struct point p1 = {1, 3};
     struct point p2 = {7, 9};
