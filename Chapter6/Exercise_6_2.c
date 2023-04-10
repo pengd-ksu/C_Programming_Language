@@ -170,3 +170,4 @@ int main (int argc, char *argv[]) {
     treePrintMatch(root);
     return 0;
 }
+// Could read from another c program: ./Exercise_6_2 -10 < testStruct.c
