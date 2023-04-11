@@ -1,0 +1,1 @@
+echo -e "3 4 + 3 * 100 / " | ./calculator
