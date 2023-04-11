@@ -32,11 +32,11 @@ int getop(char s[]) {
     if (c == '-') {
         // Check next input char to see if this is part of a
         // negative number (eg -3.14, -.314), or operator minus
-        scanf("%c", &c);
+        rc = scanf("%c", &c);
         if (isdigit(c) || c == '.') {
             s[++i] = c;
         } else {
-            if (c != EOF) {
+            if (rc != EOF) {
                 lastc[0] = c;
             }
             return '-';
