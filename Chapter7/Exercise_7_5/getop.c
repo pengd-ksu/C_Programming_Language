@@ -29,6 +29,7 @@ int getop(char s[]) {
         return c;
     }
     i = 0;
+    // In this case, s[0] is '-'
     if (c == '-') {
         // Check next input char to see if this is part of a
         // negative number (eg -3.14, -.314), or operator minus
@@ -42,6 +43,7 @@ int getop(char s[]) {
             return '-';
         }
     }
+    // In this case, s[0] is a digit
     if (isdigit(c)) {
         do {
             // scanf returns the successful matched and assigned
@@ -54,6 +56,7 @@ int getop(char s[]) {
             }
         } while (rc != EOF);
     }
+    // In this case, s[0] is '.'
     if (c == '.') {
         // collect fraction part
         do {
