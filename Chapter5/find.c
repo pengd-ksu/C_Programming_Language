@@ -24,9 +24,11 @@ int main (int argc, char *argv[]) {
     while (--argc > 0 && (*++argv)[0] == '-') {
         while (c = *++argv[0]) {
             switch (c) {
+                // 'x' for except, doesn't include this pattern
                 case 'x':
                     except = 1;
                     break;
+                // 'n' means printing the number
                 case 'n':
                     number = 1;
                     break;
@@ -43,6 +45,8 @@ int main (int argc, char *argv[]) {
     } else {
         while (myGetline(line, MAXLINE) > 0) {
             lineno++;
+            // char *strstr(const char *haystack, const char *needle)
+            // strstr finds the first occurence of needle in haystack
             if ((strstr(line, *argv) != NULL) != except) {
                 if (number) {
                     printf("%ld:", lineno);
