@@ -37,7 +37,12 @@ int main(int argc, char *argv[]) {
         error("myCp: can't create %s, mode %03o",
             argv[2], PERMS);
     }
+    // Check on file descriptor, and get fd's value (4 in this case)
+    fprintf(stdout, "f2: %d\n", f2);
     while ((n = read(f1, buf, BUFSIZ)) > 0) {
+        // It could still write to file with int that queals to fd.
+        // Need to understand it later maybe in CSAPP or os.
+        //if (write(4, buf, n) != n) {
         if (write(f2, buf, n) != n) {
             error("myCp: write error on file %s", argv[2]);
         }
