@@ -1,16 +1,16 @@
 # include <stdio.h>
 # define TABINC 8
-main() {
-    int c, nb, pos;
+int main() {
+    int c, pad, pos;
     pos = 0;
-    nb = 0;
+    pad = 0;
     while((c = getchar()) != EOF){
         if(c == '\t'){
-            nb = TABINC - pos % TABINC;
-            while(nb > 0){
+            pad = TABINC - pos % TABINC;
+            while(pad > 0){
                 putchar(' ');
                 ++pos;
-                --nb;
+                --pad;
             }
         }
         else if(c == '\n'){
